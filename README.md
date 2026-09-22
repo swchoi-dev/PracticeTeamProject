@@ -14,7 +14,9 @@
 
 #### 작업흐름
 1. [업무목록](https://github.com/users/swchoi-dev/projects/1/views/2)에서 본인에게 할당된 업무목록을 확인합니다.
-2. Todo에서 In Progress 칸으로 작업을 옮깁니다.<img width="713" height="358" alt="image" src="https://github.com/user-attachments/assets/0fb9a7cf-e2d3-4d63-ba77-2a653a9f87b4" />
+2. Todo에서 In Progress 칸으로 작업을 옮깁니다.
+<img width="982" height="676" alt="녹음 2026-09-22 125317" src="https://github.com/user-attachments/assets/1274b441-6804-4fef-a5ba-612004032763" />
+
 3. 업무량을 고려해 해당 업무의 시작 날짜와 종료 날짜를 스스로 입력합니다.<img width="831" height="467" alt="image" src="https://github.com/user-attachments/assets/2ab6553d-507a-4bf0-bd36-1fdc86244abf" />
 
 4. 브랜치를 생성하고 작업을 진행합니다.
