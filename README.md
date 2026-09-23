@@ -6,9 +6,8 @@
 [https://github.com/swchoi-dev/PracticeTeamProject](https://github.com/swchoi-dev/PracticeTeamProject)
 
 #### 브랜치 가이드
-- prod : 게임의 빌드를 생성할 운영 브랜치입니다. 모든 **신규브랜치는 여기서 생성**합니다. **절대 컨플릭이 나지 않도록 머지할 때 주의합니다**
-- dev : 게임 개발내용을 확인하고 QA를 진행할 개발 브랜치 입니다. 머지할 때 충돌이 일어나도 그나마 괜찮습니다.
-- 개인 브랜치 : 깃헙 이슈페이지에서 Create Branch 버튼을 통해 만들고 prod 브랜치로부터 생성합니다. 브랜치 명은 **feature-##** 으로 정합니다. (##은 깃헙 이슈번호)
+- main : 게임의 빌드를 생성할 운영 브랜치입니다. 모든 **신규브랜치는 여기서 생성**합니다. **PR을 통해 머지를 합니다**
+- 개인 브랜치 : 깃헙 이슈페이지에서 Create Branch 버튼을 통해 만들고 prod 브랜치로부터 생성합니다. 브랜치 명은 **feature_swchoi_issueTitle** 으로 정합니다.
 
 <img width="803" height="409" alt="image" src="https://github.com/user-attachments/assets/623d619c-54dd-4840-88dc-ac3a109259ac" />
 
@@ -20,15 +19,15 @@
 3. 업무량을 고려해 해당 업무의 시작 날짜와 종료 날짜를 스스로 입력합니다.<img width="831" height="467" alt="image" src="https://github.com/user-attachments/assets/2ab6553d-507a-4bf0-bd36-1fdc86244abf" />
 
 4. 브랜치를 생성하고 작업을 진행합니다.
-5. 개발이 완료되면 먼저 dev 브랜치에 머지시킵니다.
-6. 로컬 브랜치를 dev로 변경해서 테스트 해봅니다.
-7. 문제가 없다면 Done 칸으로 옮기고 PR을 생성합니다.
+5. 개인 브랜치에서 테스트를 하고 문제가 없다면 Done 칸으로 옮기고 PR을 생성합니다.
 
 #### 커밋 가이드
 - feat : 기능 추가, 변경, 삭제 등 개발에 대한 전반적인 내용
 - fix : QA 진행 중 발견한 **버그**를 수정했을 때
 - docs : 문서작업을 했을 때
 - chore : 코드컨벤션 맞춤, 기타 작업 시
+
+#### 커밋 메시지 가이드
 
 #### 코딩 컨벤션
 강사님께서 작성해주신 그라운드룰을 사용합니다.
@@ -67,7 +66,7 @@ Assets
             ├─ Font
             ├─ Sound
             └─ Images
-    └─ ThirdParty (Asset Store에서 받은 것들)
+    └─ Imports (Asset Store에서 받은 것들)
 ```
 
 ### 씬·프리팹 작업
