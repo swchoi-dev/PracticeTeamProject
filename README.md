@@ -9,7 +9,6 @@
 - main : 게임의 빌드를 생성할 운영 브랜치입니다. 모든 **신규브랜치는 여기서 생성**합니다. **PR을 통해 머지를 합니다**
 - 개인 브랜치 : 깃헙 이슈페이지에서 Create Branch 버튼을 통해 만들고 prod 브랜치로부터 생성합니다. 브랜치 명은 **feature_swchoi_issueTitle** 으로 정합니다.
 
-<img width="803" height="409" alt="image" src="https://github.com/user-attachments/assets/623d619c-54dd-4840-88dc-ac3a109259ac" />
 
 #### 작업흐름
 1. [업무목록](https://github.com/users/swchoi-dev/projects/1/views/2)에서 본인에게 할당된 업무목록을 확인합니다.
