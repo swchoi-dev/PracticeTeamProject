@@ -14,13 +14,14 @@
 
 #### 작업흐름
 1. [업무목록](https://github.com/users/swchoi-dev/projects/1/views/2)에서 본인에게 할당된 업무목록을 확인합니다.
-2. Todo에서 In Progress 칸으로 작업을 옮깁니다.<img width="713" height="358" alt="image" src="https://github.com/user-attachments/assets/0fb9a7cf-e2d3-4d63-ba77-2a653a9f87b4" />
-3. 업무량을 고려해 해당 업무의 시작 날짜와 종료 날짜를 스스로 입력합니다.<img width="831" height="467" alt="image" src="https://github.com/user-attachments/assets/2ab6553d-507a-4bf0-bd36-1fdc86244abf" />
+<img width="1181" height="835" alt="image" src="https://github.com/user-attachments/assets/973c2a3a-32d3-4acc-af2b-e78c4b72c6f9" />
+3. Todo에서 In Progress 칸으로 작업을 옮깁니다.<img width="713" height="358" alt="image" src="https://github.com/user-attachments/assets/0fb9a7cf-e2d3-4d63-ba77-2a653a9f87b4" />
+4. 업무량을 고려해 해당 업무의 시작 날짜와 종료 날짜를 스스로 입력합니다.<img width="831" height="467" alt="image" src="https://github.com/user-attachments/assets/2ab6553d-507a-4bf0-bd36-1fdc86244abf" />
 
-4. 브랜치를 생성하고 작업을 진행합니다.
-5. 개발이 완료되면 먼저 dev 브랜치에 머지시킵니다.
-6. 로컬 브랜치를 dev로 변경해서 테스트 해봅니다.
-7. 문제가 없다면 Done 칸으로 옮기고 PR을 생성합니다.
+5. 브랜치를 생성하고 작업을 진행합니다.
+6. 개발이 완료되면 먼저 dev 브랜치에 머지시킵니다.
+7. 로컬 브랜치를 dev로 변경해서 테스트 해봅니다.
+8. 문제가 없다면 Done 칸으로 옮기고 PR을 생성합니다.
 
 #### 커밋 가이드
 - feat : 기능 추가, 변경, 삭제 등 개발에 대한 전반적인 내용
