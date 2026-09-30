@@ -7,16 +7,24 @@ public class StateMachine<T> where T : Context
 	private Dictionary<StateType, StateBase<T>> _stateDict;
 	private StateBase<T> _current;
 
-	public StateMachine(Dictionary<StateType, StateBase<T>> stateDict)
+	public StateMachine()
 	{
-		_stateDict = stateDict;
+		_stateDict = new Dictionary<StateType, StateBase<T>>();
+	}
+
+	public void AddState(StateType stateType, StateBase<T> state)
+	{
+		if (!_stateDict.ContainsKey(stateType))
+		{
+			_stateDict.Add(stateType, state);
+		}
 	}
 
 	public void ChangeState(StateType nextState)
 	{
 		StateBase<T> next = _stateDict[nextState];
 
-		_current.Exit(); // WalkState.Exit(); //걷기 애니메이션 종료
+		_current?.Exit(); // WalkState.Exit(); //걷기 애니메이션 종료
 
 		_current = next; // 현재 상태가 걷기에서 구르기
 
@@ -28,5 +36,5 @@ public class StateMachine<T> where T : Context
 	public void FixedTick() => _current.FixedTick();
 	public void OnExit() => _current.Exit();
 
-	// public void OnAnimEvent(string animName) => _current.OnAnimEvent(animName);
+	public void OnAnimEvent(string animName) => _current.OnAnimEvent(animName);
 }

@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class AttackState : StateBase<PlayerContext>
 {
-	PlayerContext context;
-
-	public AttackState(PlayerContext context) : base(context){}
+	public AttackState(PlayerContext context, StateMachine<PlayerContext> stateMachine) : base(context, stateMachine){}
 
 	public void Tick()
 	{
-
 	}
 }

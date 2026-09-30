@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class RollState : StateBase<PlayerContext>
 {
-	public RollState(PlayerContext context) : base(context){}
+	public RollState(PlayerContext context, StateMachine<PlayerContext> stateMachine) : base(context, stateMachine){}
+
+	private const float ROLL_ANIMATION_TIME = 0.5f;
+	private float _elapsedTime;
 
 	public void Enter()
 	{
 		// 구르기 애니메이션 시작
 		// 플레이어 레이어 마스크 무적으로 변경
-
-		// 코루틴으로 애니메이션 끝날 때 호출되는거 선선
+		_elapsedTime = 0;
 	}
 
-	Coroutine EndRolling()
+	public void Tick()
 	{
-		yield return WaitForSeconds("구르기시간");
-		StateMachine.ChangeState(StateType.Walk);
+		_elapsedTime += Time.deltaTime;
+		if (_elapsedTime > ROLL_ANIMATION_TIME)
+		{
+			sm.ChangeState(StateType.Walk);
+		}
 	}
 
 	public void Exit()

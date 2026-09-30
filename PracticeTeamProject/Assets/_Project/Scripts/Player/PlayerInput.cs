@@ -12,6 +12,7 @@ public class PlayerInput
 	public bool Alpah3Pressed { get; private set; }
 	public bool SpacePressed { get; private set; }
 	public bool MenuButtonPressed { get; private set; }
+	public bool AttackPressed { get; private set; }
 
 	public void Read()
 	{
@@ -35,5 +36,6 @@ public class PlayerInput
 
 		MenuButtonPressed = Input.GetKeyDown(KeyCode.Escape);
 		SpacePressed = Input.GetKeyDown(KeyCode.Space);
+		AttackPressed = Input.GetMouseButtonDown(0);
 	}
 }

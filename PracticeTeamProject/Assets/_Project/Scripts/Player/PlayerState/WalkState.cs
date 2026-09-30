@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class WalkState : StateBase<PlayerContext>
 {
-	public WalkState(PlayerContext context) : base(context){}
+	public WalkState(PlayerContext context, StateMachine<PlayerContext> stateMachine) : base(context, stateMachine){}
 
 	public void Tick()
 	{
-		var _input = _context.input;
+		var _input = ctx.input;
 
 		if (_input.SpacePressed)
 		{
-			StateMachine.ChangeState(StateType.Roll);
+			sm.ChangeState(StateType.Roll);
 		}
 
-		if (_input.Alpah1Pressed)
+		if (_input.AttackPressed)
 		{
-			StateMachine.ChangeState(StateType.Attack);
+			sm.ChangeState(StateType.Attack);
 		}
 	}
 
@@ -25,16 +25,15 @@ public class WalkState : StateBase<PlayerContext>
 	public void FixedTick()
 	{
 		// 컨텍스트에 있는 사용자 입력값
-		var _input = _context.input;
-		var rb = _context.rigidbody;
+		var _input = ctx.input;
+		var rb = ctx.rigidbody;
 
-		Vector3 movement = new Vector3(_input.MoveAxis.x, 0, _input.MoveAxis.z);
-		rb.velocity = movement * 5f;
+		Vector3 movement = new Vector3(ctx.input.MoveAxis.x, 0, ctx.input.MoveAxis.z);
+		ctx.rigidbody.velocity = movement * 5f;
 	}
 
 	public void Exit()
 	{
-
 		Debug.Log("Exit");
 	}
 }
