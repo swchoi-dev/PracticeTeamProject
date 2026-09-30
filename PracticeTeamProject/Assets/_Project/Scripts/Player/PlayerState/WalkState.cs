@@ -12,12 +12,12 @@ public class WalkState : StateBase<PlayerContext>
 
 		if (_input.SpacePressed)
 		{
-			sm.ChangeState(StateType.Roll);
+			machine.ChangeState(StateType.Roll);
 		}
 
 		if (_input.AttackPressed)
 		{
-			sm.ChangeState(StateType.Attack);
+			machine.ChangeState(StateType.Attack);
 		}
 	}
 

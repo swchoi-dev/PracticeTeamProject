@@ -6,5 +6,7 @@ public enum StateType{
 	Walk,
 	Attack,
 	Roll,
-	Die
+	Die,
+	Patrol,
+	Trace
 }

@@ -21,7 +21,7 @@ public class RollState : StateBase<PlayerContext>
 		_elapsedTime += Time.deltaTime;
 		if (_elapsedTime > ROLL_ANIMATION_TIME)
 		{
-			sm.ChangeState(StateType.Walk);
+			machine.ChangeState(StateType.Walk);
 		}
 	}
 

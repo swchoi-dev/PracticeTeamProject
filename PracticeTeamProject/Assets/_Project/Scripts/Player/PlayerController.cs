@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
 	private Animator _animator;
 	private Camera _camera;
 
-	private StateMachine<PlayerContext> _stateMachine;
-	private PlayerContext _context;
+	private StateMachine<PlayerContext> _machine;
+	private PlayerContext _ctx;
 	private PlayerInput _input;
 
 	// ----------- 이벤트 함수 --------------------
@@ -23,19 +23,19 @@ public class PlayerController : MonoBehaviour
 
 	private void Start()
 	{
-		_stateMachine.ChangeState(StateType.Walk);
+		_machine.ChangeState(StateType.Walk);
 	}
 
     private void Update()
     {
 		_input.Read();
 
-		_stateMachine.Tick();
+		_machine.Tick();
     }
 
     private void FixedUpdate()
     {
-	    _stateMachine.FixedTick();
+	    _machine.FixedTick();
     }
 
     // ----------- 이벤트 함수 --------------------
@@ -51,25 +51,23 @@ public class PlayerController : MonoBehaviour
 
     private void BindContext()
     {
-	    _context.camera = _camera;
-	    _context.rigidbody = _rigidbody;
-	    _context.transform = _transform;
-	    _context.input = _input;
+	    _ctx.camera = _camera;
+	    _ctx.rigidbody = _rigidbody;
+	    _ctx.transform = _transform;
+	    _ctx.input = _input;
     }
 
     private void InitStateMachine()
     {
-	    _stateMachine = new StateMachine<PlayerContext>();
+	    _machine = new StateMachine<PlayerContext>();
 
-	    Dictionary<StateType, StateBase<PlayerContext>> stateDict = new();
-
-	    stateDict[StateType.Attack] = new AttackState(_context, _stateMachine);
-	    stateDict[StateType.Walk] = new WalkState(_context, _stateMachine);
-	    stateDict[StateType.Attack] = new AttackState(_context, _stateMachine);
+	    _machine.AddState(StateType.Attack, new AttackState(_ctx, _machine));
+	    _machine.AddState(StateType.Walk, new WalkState(_ctx, _machine));
+	    _machine.AddState(StateType.Roll, new RollState(_ctx, _machine));
     }
 
     private void OnAnimEvent(string animName)
     {
-	    _stateMachine.OnAnimEvent(animName);
+	    _machine.OnAnimEvent(animName);
     }
 }

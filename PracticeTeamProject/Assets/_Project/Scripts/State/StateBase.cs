@@ -5,14 +5,14 @@ using UnityEngine;
 public abstract class StateBase<T> where T : Context
 {
 	protected T ctx;
-	protected StateMachine<T> sm;
+	protected StateMachine<T> machine;
 
 	public StateBase() {}
 
 	public StateBase(T context, StateMachine<T> stateMachine)
 	{
 		ctx = context;
-		sm = stateMachine;
+		machine = stateMachine;
 	}
 
 	public virtual void Enter(){}
